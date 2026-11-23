@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CD STORE - 발라드 · 재즈 · 팝송 CD 쇼핑몰</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <a class="logo" href="#home">CD STORE</a>
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="앨범명 · 가수 검색" aria-label="상품 검색">
+      <button type="submit">검색</button>
+    </form>
+    <div class="user-links" id="userLinks"></div>
+  </div>
+  <nav class="nav" aria-label="분류">
+    <a href="#home">홈</a>
+    <a href="#products" data-cat="전체">전체</a>
+    <a href="#products" data-cat="발라드">발라드</a>
+    <a href="#products" data-cat="재즈">재즈</a>
+    <a href="#products" data-cat="팝송">팝송</a>
+    <a href="#cart">장바구니 <b id="cartCount">0</b></a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="view">
+    <div class="slider" id="slider">
+      <figure class="slide on"><img src="img/slide1.svg" alt="보라색 CD들"><figcaption><h2>좋은 음악은 CD로 오래 남아요</h2><p>발라드 · 재즈 · 팝송 엄선 앨범</p><a class="btn" href="#products">상품 보기</a></figcaption></figure>
+      <figure class="slide"><img src="img/slide2.svg" alt="헤드폰"><figcaption><h2>가입하면 3,000P 바로 지급</h2><p>등급에 따라 최대 7% 적립</p><a class="btn" href="#signup">회원가입</a></figcaption></figure>
+      <figure class="slide"><img src="img/slide3.svg" alt="재즈 피아노"><figcaption><h2>밤에 어울리는 재즈</h2><p>피아노 트리오부터 색소폰까지</p><a class="btn" href="#products" data-cat="재즈">재즈 보기</a></figcaption></figure>
+      <figure class="slide"><img src="img/slide4.svg" alt="팝 음악"><figcaption><h2>드라이브엔 팝송</h2><p>신나는 최신 컴필레이션</p><a class="btn" href="#products" data-cat="팝송">팝송 보기</a></figcaption></figure>
+      <div class="dots" id="dots"></div>
+    </div>
+    <section class="block"><h2>추천 CD</h2><div class="grid" id="homeGrid"></div></section>
+    <section class="block grade-info"><h2>회원 등급 혜택</h2><div class="grade-list" id="gradeList"></div></section>
+  </section>
+
+  <section id="products" class="view" hidden>
+    <section class="block">
+      <h2 id="listTitle">전체 상품</h2>
+      <div class="chips" id="chips" aria-label="장르"></div>
+      <label class="filter">가수 <select id="artistSelect"></select></label>
+      <p class="muted" id="resultInfo"></p>
+      <div class="grid" id="productGrid"></div>
+    </section>
+  </section>
+
+  <section id="detail" class="view" hidden><section class="block" id="detailBox"></section></section>
+
+  <section id="cart" class="view" hidden>
+    <section class="block"><h2>장바구니</h2><div id="cartBox"></div></section>
+  </section>
+
+  <section id="checkout" class="view" hidden>
+    <section class="block"><h2>체험 결제</h2><div id="checkoutBox"></div></section>
+  </section>
+
+  <section id="done" class="view" hidden><section class="block" id="doneBox"></section></section>
+
+  <section id="login" class="view" hidden>
+    <section class="block narrow"><h2>로그인</h2>
+      <form id="loginForm" class="form">
+        <label>아이디<input name="id" required autocomplete="username"></label>
+        <label>비밀번호<input name="pw" type="password" required autocomplete="current-password"></label>
+        <p class="msg" id="loginMsg"></p>
+        <button class="btn" type="submit">로그인</button>
+        <p class="muted">아직 회원이 아니신가요? <a href="#signup">회원가입</a></p>
+      </form>
+    </section>
+  </section>
+
+  <section id="signup" class="view" hidden>
+    <section class="block narrow"><h2>회원가입</h2>
+      <form id="signupForm" class="form">
+        <label>아이디 (4자 이상)<input name="id" required minlength="4" autocomplete="username"></label>
+        <label>비밀번호 (4자 이상)<input name="pw" type="password" required minlength="4" autocomplete="new-password"></label>
+        <label>비밀번호 확인<input name="pw2" type="password" required autocomplete="new-password"></label>
+        <label>이름<input name="name" required></label>
+        <label>이메일<input name="email" type="email" required></label>
+        <p class="msg" id="signupMsg"></p>
+        <button class="btn" type="submit">가입하고 3,000P 받기</button>
+      </form>
+    </section>
+  </section>
+
+  <section id="mypage" class="view" hidden><section class="block" id="mypageBox"></section></section>
+</main>
+
+<footer class="foot">
+  <p><b>CD STORE</b> · 발라드 · 재즈 · 팝송 CD 전문 쇼핑몰</p>
+  <p class="muted">대학 수업 실습용 쇼핑몰입니다. 결제는 체험용이며 실제 결제는 이루어지지 않습니다.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
